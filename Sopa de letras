@@ -1,0 +1,460 @@
+///////////////////////////////////////////
+//
+// APELLIDO: Wong
+// NOMBRES: Lucio Imanol
+// SOPA DE LETRAS EN MAYÚSCULAS QUE BUSCA EN 8 DIRECCIONES (VERTICAL, HORIZONTAL, DIAGONALES E INVERSAMENTE)
+//
+//////////////////////////////////////////
+
+#include <iostream>
+using namespace std;
+int main ()
+{
+    char matriz[10][10];
+    char b[10];
+    int a = 0, fin=0;
+    int cont = 0;
+    int u, g;
+    cout << "Ingrese la matriz:" << endl;
+    for (int i = 0; i < 10; i++)
+    for (int j = 0; j < 10; j++)
+    {
+        cin >> matriz[i][j];
+        if (matriz[i][j] < char(65) || matriz[i][j] > char (90))
+        {
+        cout << "Error de carga. Programa finalizado";
+        fin++;
+        j =10;
+        i=10;
+        }
+        }
+    if (fin == 0)
+    {
+    cout << "Ingrese la palabra a buscar" << endl;
+    for (int h = 0; h < 10; h++)
+    {
+        cin >> b [h];
+        a++;
+        if (b[h] == char (46))
+        {
+        h = 10;
+        a--;
+        }
+        }
+    switch (a)
+    {
+           case 1:
+                for (int i = 0; i < 10; i++)
+                for (int j = 0; j < 10; j++)
+                {
+                    if (matriz[i][j] == b[0])
+                    cont++;
+                    }
+                if (cont > 0)
+                cout << "palabra encontrada " << cont << " veces" << endl;
+                else
+                cout << "Palabra no encontrada" << endl;
+                break;
+           case 2:
+                for (int i = 0; i < 10; i++)
+                for (int j = 0; j < 10; j++)
+                {
+                    if (matriz[i][j] == b[0] && matriz[i][j+1] == b[1])
+                    {
+                    cont++;
+                    }
+                    if (matriz[i][j] == b[0] && matriz[i+1][j] == b[1])
+                    {
+                    cont++;
+                    }
+                    if (matriz[i][g] == b[0] && matriz[i][g-1] == b[1])
+                    {
+                    cont++;
+                    }
+                    if (matriz[u][j] == b[0] && matriz[u-1][j] == b[1])
+                    {
+                    cont++;
+                    }
+                    u = a;
+                    g = a;
+                    if (matriz[i][j] == b[0] && matriz[i+1][j+1] == b[1])// diagonal para abajo de izquierda a derecha
+                    {
+                    cont++;
+                    }
+                    if (matriz[u][j] == b[0] && matriz[u-1][j+1] == b[1])// diagonal para arriba de izquierda a derecha
+                    {
+                    cont++;
+                    }
+                    if (matriz[i][g] == b[0] && matriz[i+1][g-1] == b[1])// diagonal para abajo de derecha a izquierda
+                    {
+                    cont++;
+                    }
+                    if (matriz[u][g] == b[0] && matriz[u-1][g-1] == b[1])// diagonal para arriba de derecha a izquierda
+                    {
+                    cont++;
+                    }
+                    }
+                if (cont > 0)
+                cout << "palabra encontrada " << cont << " veces" << endl;
+                else
+                cout << "Palabra no encontrada" << endl;
+                break;
+           case 3:
+                for (int i = 0; i < 10; i++)
+                for (int j = 0; j < 10; j++)
+                {
+                    if (matriz[i][j] == b[0] && matriz[i][j+1] == b[1] && matriz[i][j+2] == b[2])
+                    {
+                    cont++;
+                    }
+                    if (matriz[i][j] == b[0] && matriz[i+1][j] == b[1] && matriz[i+2][j] == b[2])
+                    {
+                    cont++;
+                    }
+                    if (matriz[i][g] == b[0] && matriz[i][g-1] == b[1] && matriz[i][g-2] == b[2])
+                    {
+                    cont++;
+                    }
+                    if (matriz[u][j] == b[0] && matriz[u-1][j] == b[1] && matriz[u-2][j] == b[2])
+                    {
+                    cont++;
+                    }
+                    u = a;
+                    g = a;
+                    if (matriz[i][j] == b[0] && matriz[i+1][j+1] == b[1] && matriz[i+2][j+2] == b[2])// diagonal para abajo de izquierda a derecha
+                    {
+                    cont++;
+                    }
+                    if (matriz[u][j] == b[0] && matriz[u-1][j+1] == b[1] && matriz[u-2][j+1] == b[2])// diagonal para arriba de izquierda a derecha
+                    {
+                    cont++;
+                    }
+                    if (matriz[i][g] == b[0] && matriz[i+1][g-1] == b[1] && matriz[i+2][g-2] == b[2])// diagonal para abajo de derecha a izquierda
+                    {
+                    cont++;
+                    }
+                    if (matriz[u][g] == b[0] && matriz[u-1][g-1] == b[1] && matriz[u-2][g-2] == b[2])// diagonal para arriba de derecha a izquierda
+                    {
+                    cont++;
+                    }
+                    }
+                if (cont > 0)
+                cout << "palabra encontrada " << cont << " veces" << endl;
+                else
+                cout << "Palabra no encontrada" << endl;
+                break;
+           case 4:
+                for (int i = 0; i < 10; i++)
+                for (int j = 0; j < 10; j++)
+                {
+                    if (matriz[i][j] == b[0] && matriz[i][j+1] == b[1] && matriz[i][j+2] == b[2] && matriz[i][j+3] == b[3])
+                    {
+                    cont++;
+                    }
+                    if (matriz[i][j] == b[0] && matriz[i+1][j] == b[1] && matriz[i+2][j] == b[2] && matriz[i+3][j] == b[3])
+                    {
+                    cont++;
+                    }
+                    if (matriz[i][g] == b[0] && matriz[i][g-1] == b[1] && matriz[i][g-2] == b[2] && matriz[i][g-3] == b[3])
+                    {
+                    cont++;
+                    }
+                    if (matriz[u][j] == b[0] && matriz[u-1][j] == b[1] && matriz[u-2][j] == b[2] && matriz[u-3][j] == b[3])
+                    {
+                    cont++;
+                    }
+                    u = a;
+                    g = a;
+                    if (matriz[i][j] == b[0] && matriz[i+1][j+1] == b[1] && matriz[i+2][j+2] == b[2] && matriz[i+3][j+3] == b[3])// diagonal para abajo de izquierda a derecha
+                    {
+                    cont++;
+                    }
+                    if (matriz[u][j] == b[0] && matriz[u-1][j+1] == b[1] && matriz[u-2][j+2] == b[2] && matriz[i+3][j+3] == b[3])// diagonal para arriba de izquierda a derecha
+                    {
+                    cont++;
+                    }
+                    if (matriz[i][g] == b[0] && matriz[i+1][g-1] == b[1] && matriz[i+2][g-2] == b[2] && matriz[i+3][g-3] == b[3])// diagonal para abajo de derecha a izquierda
+                    {
+                    cont++;
+                    }
+                    if (matriz[u][g] == b[0] && matriz[u-1][g-1] == b[1] && matriz[u-2][g-2] == b[2] && matriz[u-3][g-3] == b[3])// diagonal para arriba de derecha a izquierda
+                    {
+                    cont++;
+                    }
+                    }
+                if (cont > 0)
+                cout << "palabra encontrada " << cont << " veces" << endl;
+                else
+                cout << "Palabra no encontrada" << endl;
+                break;
+           case 5:
+                for (int i = 0; i < 10; i++)
+                for (int j = 0; j < 10; j++)
+                {
+                    if (matriz[i][j] == b[0] && matriz[i][j+1] == b[1] && matriz[i][j+2] == b[2] && matriz[i][j+3] == b[3] && matriz[i][j+4] == b[4])
+                    {
+                    cont++;
+                    }
+                    if (matriz[i][j] == b[0] && matriz[i+1][j] == b[1] && matriz[i+2][j] == b[2] && matriz[i+3][j] == b[3] && matriz[i+4][j] == b[4])
+                    {
+                    cont++;
+                    }
+                    if (matriz[i][g] == b[0] && matriz[i][g-1] == b[1] && matriz[i][g-2] == b[2] && matriz[i][g-3] == b[3] && matriz[i][g-4] == b[4])
+                    {
+                    cont++;
+                    }
+                    if (matriz[u][j] == b[0] && matriz[u-1][j] == b[1] && matriz[u-2][j] == b[2] && matriz[u-3][j] == b[3] && matriz[u-4][j] == b[4])
+                    {
+                    cont++;
+                    }
+                    u = a;
+                    g = a;
+                    if (matriz[i][j] == b[0] && matriz[i+1][j+1] == b[1] && matriz[i+2][j+2] == b[2] && matriz[i+3][j+3] == b[3] && matriz[i+4][j+4] == b[4])//diagonal para abajo de izquierda a derecha
+                    {
+                    cont++;
+                    }
+                    if (matriz[u][j] == b[0] && matriz[u-1][j+1] == b[1] && matriz[u-2][j+2] == b[2] && matriz[u-3][j+3] == b[3] && matriz[u-4][j+4] == b[4])//diagonal para arriba de izquierda a derecha
+                    {
+                    cont++;
+                    }
+                    if (matriz[i][g] == b[0] && matriz[i+1][g-1] == b[1] && matriz[i+2][g-2] == b[2] && matriz[i+3][g-3] == b[3] && matriz[i+4][g-4] == b[4])// diagonal para abajo de derecha a izquierda
+                    {
+                    cont++;
+                    }
+                    if (matriz[u][g] == b[0] && matriz[u-1][g-1] == b[1] && matriz[u-2][g-2] == b[2] && matriz[u-3][g-3] == b[3] && matriz[u-4][g-4] == b[4])// diagonal para arriba de derecha a izquierda
+                    {
+                    cont++;
+                    }
+                    }
+                if (cont > 0)
+                cout << "palabra encontrada " << cont << " veces" << endl;
+                else
+                cout << "Palabra no encontrada" << endl;
+                break;
+           case 6:
+                for (int i = 0; i < 10; i++)
+                for (int j = 0; j < 10; j++)
+                {
+                    if (matriz[i][j] == b[0] && matriz[i][j+1] == b[1] && matriz[i][j+2] == b[2] && matriz[i][j+3] == b[3] && matriz[i][j+4] == b[4] && matriz[i][j+5] == b[5])
+                    {
+                    cont++;
+                    }
+                    if (matriz[i][j] == b[0] && matriz[i+1][j] == b[1] && matriz[i+2][j] == b[2] && matriz[i+3][j] == b[3] && matriz[i+4][j] == b[4] && matriz[i+5][j] == b[5])
+                    {
+                    cont++;
+                    }
+                    if (matriz[i][g] == b[0] && matriz[i][g-1] == b[1] && matriz[i][g-2] == b[2] && matriz[i][g-3] == b[3] && matriz[i][g-4] == b[4] && matriz[i][g-5] == b[5])
+                    {
+                    cont++;
+                    }
+                    if (matriz[u][j] == b[0] && matriz[u-1][j] == b[1] && matriz[u-2][j] == b[2] && matriz[u-3][j] == b[3] && matriz[u-4][j] == b[4] && matriz[u-5][j] == b[5])
+                    {
+                    cont++;
+                    }
+                    u = a;
+                    g = a;
+                    if (matriz[i][j] == b[0] && matriz[i+1][j+1] == b[1] && matriz[i+2][j+2] == b[2] && matriz[i+3][j+3] == b[3] && matriz[i+4][j+4] == b[4] && matriz[i+5][j+5] == b[5])//diagonal para abajo de derecha a izquierda
+                    {
+                    cont++;
+                    }
+                    if (matriz[u][j] == b[0] && matriz[u-1][j+1] == b[1] && matriz[u-2][j+2] == b[2] && matriz[u-3][j+3] == b[3] && matriz[u-4][j+4] == b[4] && matriz[u-5][j+5] == b[5])//diagonal para arriba de derecha a izquierda
+                    {
+                    cont++;
+                    }
+                    if (matriz[i][g] == b[0] && matriz[i+1][g-1] == b[1] && matriz[i+2][g-2] == b[2] && matriz[i+3][g-3] == b[3] && matriz[i+4][g-4] == b[4] && matriz[i+5][g-5] == b[5])// diagonal para abajo de derecha a izquierda
+                    {
+                    cont++;
+                    }
+                    if (matriz[u][g] == b[0] && matriz[u-1][g-1] == b[1] && matriz[u-2][g-2] == b[2] && matriz[u-3][g-3] == b[3] && matriz[u-4][g-4] == b[4] && matriz[u-5][g-5] == b[5])// diagonal para arriba de derecha a izquierda
+                    {
+                    cont++;
+                    }
+                    }
+                if (cont > 0)
+                cout << "palabra encontrada " << cont << " veces" << endl;
+                else
+                cout << "Palabra no encontrada" << endl;
+                break;
+           case 7:
+                for (int i = 0; i < 10; i++)
+                for (int j = 0; j < 10; j++)
+                {
+                    if (matriz[i][j] == b[0] && matriz[i][j+1] == b[1] && matriz[i][j+2] == b[2] && matriz[i][j+3] == b[3] && matriz[i][j+4] == b[4] && matriz[i][j+5] == b[5] && matriz[i][j+6] == b[6])
+                    {
+                    cont++;
+                    }
+                    if (matriz[i][j] == b[0] && matriz[i+1][j] == b[1] && matriz[i+2][j] == b[2] && matriz[i+3][j] == b[3] && matriz[i+4][j] == b[4] && matriz[i+5][j] == b[5] && matriz[i+6][j] == b[6])
+                    {
+                    cont++;
+                    }
+                    if (matriz[i][g] == b[0] && matriz[i][g-1] == b[1] && matriz[i][g-2] == b[2] && matriz[i][g-3] == b[3] && matriz[i][g-4] == b[4] && matriz[i][g-5] == b[5] && matriz[i][g-6] == b[6])
+                    {
+                    cont++;
+                    }
+                    if (matriz[u][j] == b[0] && matriz[u-1][j] == b[1] && matriz[u-2][j] == b[2] && matriz[u-3][j] == b[3] && matriz[u-4][j] == b[4] && matriz[u-5][j] == b[5] && matriz[u-6][j] == b[6])
+                    {
+                    cont++;
+                    }
+                    u = a;
+                    g = a;
+                    if (matriz[i][j] == b[0] && matriz[i+1][j+1] == b[1] && matriz[i+2][j+2] == b[2] && matriz[i+3][j+3] == b[3] && matriz[i+4][j+4] == b[4] && matriz[i+5][j+5] == b[5] && matriz[i+6][j+6] == b[6])//diagonal para abajo de izquierda a derecha
+                    {
+                    cont++;
+                    }
+                    if (matriz[u][j] == b[0] && matriz[u-1][j+1] == b[1] && matriz[u-2][j+2] == b[2] && matriz[u-3][j+3] == b[3] && matriz[u-4][j+4] == b[4] && matriz[u-5][j+5] == b[5] && matriz[u-6][j+6] == b[6])//diagonal para arriba de izquierda a derecha
+                    {
+                    cont++;
+                    }
+                    if (matriz[i][g] == b[0] && matriz[i+1][g-1] == b[1] && matriz[i+2][g-2] == b[2] && matriz[i+3][g-3] == b[3] && matriz[i+4][g-4] == b[4] && matriz[i+5][g-5] == b[5] && matriz[i+6][g-6] == b[6])// diagonal para abajo de derecha a izquierda
+                    {
+                    cont++;
+                    }
+                    if (matriz[u][g] == b[0] && matriz[u-1][g-1] == b[1] && matriz[u-2][g-2] == b[2] && matriz[u-3][g-3] == b[3] && matriz[u-4][g-4] == b[4] && matriz[u-5][g-5] == b[5] && matriz[u-6][g-6] == b[6])// diagonal para arriba de derecha a izquierda
+                    {
+                    cont++;
+                    }
+                    }
+                if (cont > 0)
+                cout << "palabra encontrada " << cont << " veces" << endl;
+                else
+                cout << "Palabra no encontrada" << endl;
+                break;
+           case 8:
+                for (int i = 0; i < 10; i++)
+                for (int j = 0; j < 10; j++)
+                {
+                    if (matriz[i][j] == b[0] && matriz[i][j+1] == b[1] && matriz[i][j+2] == b[2] && matriz[i][j+3] == b[3] && matriz[i][j+4] == b[4] && matriz[i][j+5] == b[5] && matriz[i][j+6] == b[6] && matriz[i][j+7] == b[7])
+                    {
+                    cont++;
+                    }
+                    if (matriz[i][j] == b[0] && matriz[i+1][j] == b[1] && matriz[i+2][j] == b[2] && matriz[i+3][j] == b[3] && matriz[i+4][j] == b[4] && matriz[i+5][j] == b[5] && matriz[i+6][j] == b[6] && matriz[i+7][j] == b[7])
+                    {
+                    cont++;
+                    }
+                    if (matriz[i][g] == b[0] && matriz[i][g-1] == b[1] && matriz[i][g-2] == b[2] && matriz[i][g-3] == b[3] && matriz[i][g-4] == b[4] && matriz[i][g-5] == b[5] && matriz[i][g-6] == b[6] && matriz[i][g-7] == b[7])
+                    {
+                    cont++;
+                    }
+                    if (matriz[u][j] == b[0] && matriz[u-1][j] == b[1] && matriz[u-2][j] == b[2] && matriz[u-3][j] == b[3] && matriz[u-4][j] == b[4] && matriz[u-5][j] == b[5] && matriz[u-6][j] == b[6] && matriz[u-7][j] == b[7])
+                    {
+                    cont++;
+                    }
+                    u = a;
+                    g = a;
+                    if (matriz[i][j] == b[0] && matriz[i+1][j+1] == b[1] && matriz[i+2][j+2] == b[2] && matriz[i+3][j+3] == b[3] && matriz[i+4][j+4] == b[4] && matriz[i+5][j+5] == b[5] && matriz[i+6][j+6] == b[6] && matriz[i+7][j+7] == b[7])//diagonal para abajo de izquierda a derecha
+                    {
+                    cont++;
+                    }
+                    if (matriz[u][j] == b[0] && matriz[u-1][j+1] == b[1] && matriz[u-2][j+2] == b[2] && matriz[u-3][j+3] == b[3] && matriz[u-4][j+4] == b[4] && matriz[u-5][j+5] == b[5] && matriz[u-6][j+6] == b[6] && matriz[u-7][j-7] == b[7])//diagonal para arriba de izquierda a derecha
+                    {
+                    cont++;
+                    }
+                    if (matriz[i][g] == b[0] && matriz[i+1][g-1] == b[1] && matriz[i+2][g-2] == b[2] && matriz[i+3][g-3] == b[3] && matriz[i+4][g-4] == b[4] && matriz[i+5][g-5] == b[5] && matriz[i+6][g-6] == b[6] && matriz[i+7][g-7] == b[7])// diagonal para abajo de derecha a izquierda
+                    {
+                    cont++;
+                    }
+                    if (matriz[u][g] == b[0] && matriz[u-1][g-1] == b[1] && matriz[u-2][g-2] == b[2] && matriz[u-3][g-3] == b[3] && matriz[u-4][g-4] == b[4] && matriz[u-5][g-5] == b[5] && matriz[u-6][g-6] == b[6] && matriz[u-7][g-7] == b[7])// diagonal para arriba de derecha a izquierda
+                    {
+                    cont++;
+                    }
+                    }
+                if (cont > 0)
+                cout << "palabra encontrada " << cont << " veces" << endl;
+                else
+                cout << "Palabra no encontrada" << endl;
+                break;
+           case 9:
+                for (int i = 0; i < 10; i++)
+                for (int j = 0; j < 10; j++)
+                {
+                    if (matriz[i][j] == b[0] && matriz[i][j+1] == b[1] && matriz[i][j+2] == b[2] && matriz[i][j+3] == b[3] && matriz[i][j+4] == b[4] && matriz[i][j+5] == b[5] && matriz[i][j+6] == b[6] && matriz[i][j+7] == b[7] && matriz[i][j+8] == b[8])
+                    {
+                    cont++;
+                    }
+                    if (matriz[i][j] == b[0] && matriz[i+1][j] == b[1] && matriz[i+2][j] == b[2] && matriz[i+3][j] == b[3] && matriz[i+4][j] == b[4] && matriz[i+5][j] == b[5] && matriz[i+6][j] == b[6] && matriz[i+7][j] == b[7] && matriz[i+8][j] == b[8])
+                    {
+                    cont++;
+                    }
+                    if (matriz[i][g] == b[0] && matriz[i][g-1] == b[1] && matriz[i][g-2] == b[2] && matriz[i][g-3] == b[3] && matriz[i][g-4] == b[4] && matriz[i][g-5] == b[5] && matriz[i][g-6] == b[6] && matriz[i][g-7] == b[7] && matriz[i][g-8] == b[8])
+                    {
+                    cont++;
+                    }
+                    if (matriz[u][j] == b[0] && matriz[u-1][j] == b[1] && matriz[u-2][j] == b[2] && matriz[u-3][j] == b[3] && matriz[u-4][j] == b[4] && matriz[u-5][j] == b[5] && matriz[u-6][j] == b[6] && matriz[u-7][j] == b[7] && matriz[u-8][j] == b[8])
+                    {
+                    cont++;
+                    }
+                    u = a;
+                    g = a;
+                    if (matriz[i][j] == b[0] && matriz[i+1][j+1] == b[1] && matriz[i+2][j+2] == b[2] && matriz[i+3][j+3] == b[3] && matriz[i+4][j+4] == b[4] && matriz[i+5][j+5] == b[5] && matriz[i+6][j+6] == b[6] && matriz[i+7][j+7] == b[7] && matriz[i+8][j+8] == b[8])//diagonal para abajo de izquierda a derecha
+                    {
+                    cont++;
+                    }
+                    if (matriz[u][j] == b[0] && matriz[u-1][j+1] == b[1] && matriz[u-2][j+2] == b[2] && matriz[u-3][j+3] == b[3] && matriz[u-4][j+4] == b[4] && matriz[u-5][j+5] == b[5] && matriz[u-6][j+6] == b[6] && matriz[u-7][j-7] == b[7] && matriz[u-8][j+8] == b[8])//diagonal para arriba de izquierda a derecha
+                    {
+                    cont++;
+                    }
+                    if (matriz[i][g] == b[0] && matriz[i+1][g-1] == b[1] && matriz[i+2][g-2] == b[2] && matriz[i+3][g-3] == b[3] && matriz[i+4][g-4] == b[4] && matriz[i+5][g-5] == b[5] && matriz[i+6][g-6] == b[6] && matriz[i+7][g-7] == b[7] && matriz[i+8][g-8] == b[8])// diagonal para abajo de derecha a izquierda
+                    {
+                    cont++;
+                    }
+                    if (matriz[u][g] == b[0] && matriz[u-1][g-1] == b[1] && matriz[u-2][g-2] == b[2] && matriz[u-3][g-3] == b[3] && matriz[u-4][g-4] == b[4] && matriz[u-5][g-5] == b[5] && matriz[u-6][g-6] == b[6] && matriz[u-7][g-7] == b[7] && matriz[u-8][g-8] == b[8])// diagonal para arriba de derecha a izquierda
+                    {
+                    cont++;
+                    }
+                    }
+                if (cont > 0)
+                cout << "palabra encontrada " << cont << " veces" << endl;
+                else
+                cout << "Palabra no encontrada" << endl;
+                break;
+           default:
+                for (int i = 0; i < 10; i++)
+                for (int j = 0; j < 10; j++)
+                {
+                    if (matriz[i][j] == b[0] && matriz[i][j+1] == b[1] && matriz[i][j+2] == b[2] && matriz[i][j+3] == b[3] && matriz[i][j+4] == b[4] && matriz[i][j+5] == b[5] && matriz[i][j+6] == b[6] && matriz[i][j+7] == b[7] && matriz[i][j+8] == b[8] && matriz[i][j+9] == b[9])
+                    {
+                    cont++;
+                    }
+                    if (matriz[i][j] == b[0] && matriz[i+1][j] == b[1] && matriz[i+2][j] == b[2] && matriz[i+3][j] == b[3] && matriz[i+4][j] == b[4] && matriz[i+5][j] == b[5] && matriz[i+6][j] == b[6] && matriz[i+7][j] == b[7] && matriz[i+8][j] == b[8] && matriz[i+9][j] == b[9])
+                    {
+                    cont++;
+                    }
+                    if (matriz[i][g] == b[0] && matriz[i][g-1] == b[1] && matriz[i][g-2] == b[2] && matriz[i][g-3] == b[3] && matriz[i][g-4] == b[4] && matriz[i][g-5] == b[5] && matriz[i][g-6] == b[6] && matriz[i][g-7] == b[7] && matriz[i][g-8] == b[8] && matriz[i][g-9] == b[9])
+                    {
+                    cont++;
+                    }
+                    if (matriz[u][j] == b[0] && matriz[u-1][j] == b[1] && matriz[u-2][j] == b[2] && matriz[u-3][j] == b[3] && matriz[u-4][j] == b[4] && matriz[u-5][j] == b[5] && matriz[u-6][j] == b[6] && matriz[u-7][j] == b[7] && matriz[u-8][j] == b[8] && matriz[u-9][j] == b[9])
+                    {
+                    cont++;
+                    }
+                    u = a;
+                    g = a;
+                    if (matriz[i][j] == b[0] && matriz[i+1][j+1] == b[1] && matriz[i+2][j+2] == b[2] && matriz[i+3][j+3] == b[3] && matriz[i+4][j+4] == b[4] && matriz[i+5][j+5] == b[5] && matriz[i+6][j+6] == b[6] && matriz[i+7][j+7] == b[7] && matriz[i+8][j+8] == b[8] && matriz[i+9][j+9] == b[9])//diagonal para abajo de izquierda a derecha
+                    {
+                    cont++;
+                    }
+                    if (matriz[u][j] == b[0] && matriz[u-1][j+1] == b[1] && matriz[u-2][j+2] == b[2] && matriz[u-3][j+3] == b[3] && matriz[u-4][j+4] == b[4] && matriz[u-5][j+5] == b[5] && matriz[u-6][j+6] == b[6] && matriz[u-7][j-7] == b[7] && matriz[u-8][j+8] == b[8] && matriz[u-9][j+9] == b[9])//diagonal para arriba de izquierda a derecha
+                    {
+                    cont++;
+                    }
+                    if (matriz[i][g] == b[0] && matriz[i+1][g-1] == b[1] && matriz[i+2][g-2] == b[2] && matriz[i+3][g-3] == b[3] && matriz[i+4][g-4] == b[4] && matriz[i+5][g-5] == b[5] && matriz[i+6][g-6] == b[6] && matriz[i+7][g-7] == b[7] && matriz[i+8][g-8] == b[8] && matriz[i+9][g-9] == b[9])// diagonal para abajo de derecha a izquierda
+                    {
+                    cont++;
+                    }
+                    if (matriz[u][g] == b[0] && matriz[u-1][g-1] == b[1] && matriz[u-2][g-2] == b[2] && matriz[u-3][g-3] == b[3] && matriz[u-4][g-4] == b[4] && matriz[u-5][g-5] == b[5] && matriz[u-6][g-6] == b[6] && matriz[u-7][g-7] == b[7] && matriz[u-8][g-8] == b[8] && matriz[u-9][g-9] == b[9])// diagonal para arriba de derecha a izquierda
+                    {
+                    cont++;
+                    }
+                    }
+                if (cont > 0)
+                cout << "palabra encontrada " << cont << " veces" << endl;
+                else
+                cout << "Palabra no encontrada" << endl;
+                break;
+                }
+    }
+    else
+    cout << endl;
+    system("PAUSE");
+    return 0;
+}
